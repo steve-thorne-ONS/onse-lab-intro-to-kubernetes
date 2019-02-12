@@ -10,7 +10,7 @@ def image_name     = "onseshared/${github_id.toLowerCase()}-onse-lab-intro-to-ku
 def kaniko_image   = 'gcr.io/kaniko-project/executor:debug-539ddefcae3fd6b411a95982a830d987f4214251'
 def kubectl_image  = 'aklearning/onse-eks-kubectl-deployer:0.0.1'
 def label          = "build-${UUID.randomUUID().toString()}"
-def namespace      = "${github_id}"
+def namespace      = "${github_id.toLowerCase()}"
 def pod_yaml       = """
 kind: Pod
 metadata:
